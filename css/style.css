@@ -1,0 +1,451 @@
+@font-face {
+  font-family: TwitterChirpExtendedHeavy;
+  src: url(https://abs.twimg.com/fonts/chirp-extended-heavy-web.woff2)
+    format("woff2");
+  src: url(https://abs.twimg.com/fonts/chirp-extended-heavy-web.woff)
+    format("woff");
+  font-weight: 800;
+  font-style: "normal";
+  font-display: "swap";
+}
+@font-face {
+  font-family: TwitterChirp;
+  src: url(https://abs.twimg.com/fonts/chirp-regular-web.woff2) format("woff2");
+  src: url(https://abs.twimg.com/fonts/chirp-regular-web.woff) format("woff");
+  font-weight: 400;
+  font-style: "normal";
+  font-display: "swap";
+}
+@font-face {
+  font-family: TwitterChirp;
+  src: url(https://abs.twimg.com/fonts/chirp-medium-web.woff2) format("woff2");
+  src: url(https://abs.twimg.com/fonts/chirp-medium-web.woff) format("woff");
+  font-weight: 500;
+  font-style: "normal";
+  font-display: "swap";
+}
+@font-face {
+  font-family: TwitterChirp;
+  src: url(https://abs.twimg.com/fonts/chirp-bold-web.woff2) format("woff2");
+  src: url(https://abs.twimg.com/fonts/chirp-bold-web.woff) format("woff");
+  font-weight: 700;
+  font-style: "normal";
+  font-display: "swap";
+}
+@font-face {
+  font-family: TwitterChirp;
+  src: url(https://abs.twimg.com/fonts/chirp-heavy-web.woff2) format("woff2");
+  src: url(https://abs.twimg.com/fonts/chirp-heavy-web.woff) format("woff");
+  font-weight: 800;
+  font-style: "normal";
+  font-display: "swap";
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color: rgb(29, 161, 242);
+  --border-color: rgb(56, 68, 77);
+  --shadow-color: rgb(255, 255, 255, 0, 0.07);
+}
+
+html {
+  color: #fff;
+  font-size: 15px;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  background-color: black;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+button {
+  cursor: pointer;
+}
+
+input:focus {
+  outline: none;
+}
+
+img {
+  --webkit-user-drag: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 243px auto 350px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.left-side {
+  position: fixed;
+  height: 100vh;
+  width: 240px;
+  padding: 0 12px 0 12px;
+  display: flex;
+  flex-wrap: column;
+  align-items: flex-end;
+  /* background-color: rgba(240, 239, 238, 0.863); */
+}
+
+.left-navbar {
+  position: relative;
+  width: 245px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.left-navbar .svg {
+  height: 2em;
+  size: 2em;
+}
+
+.left-side .left-navbar .logo {
+  height: 2rem;
+}
+
+.left-side svg,
+.container-header svg,
+.post-header svg,
+.trends svg {
+  fill: #fff;
+  height: 1.75rem;
+}
+.left-navbar > div:not(.profile-btn) > div:nth-child(1) {
+  padding: 12px;
+}
+
+.left-navbar a {
+  display: flex;
+  padding: 4px 0;
+}
+
+.left-navbar a div {
+  display: flex;
+  padding: 12px;
+  align-items: center;
+  border-radius: 99999px;
+}
+.left-navbar a div:hover {
+  background-color: rgb(26, 26, 26);
+}
+
+.left-navbar a span {
+  font-size: 20px;
+  margin-left: 20px;
+  margin-right: 16px;
+  letter-spacing: 0.3px;
+}
+.tweet-btn {
+  /* font-family: var(--main-front); */
+  font-size: 16px;
+  width: 100%;
+  /* height: 30px; */
+  font-weight: 700;
+  border: none;
+  letter-spacing: 0.2px;
+  background-color: #75b0fd;
+  border-radius: 30px;
+  color: inherit;
+  margin: 16px 0;
+  padding: 20px 0;
+}
+
+.tweet-btn .t-first {
+  width: 85%;
+  height: 50%;
+}
+.left-side .right-column {
+  display: flex;
+  align-items: center;
+  margin-left: 4em;
+}
+
+.left-side .right-column svg {
+  margin-left: 30px;
+}
+
+.profile-btn {
+  display: flex;
+  margin: 12px 0;
+  padding: 12px;
+  padding-top: -1.3em;
+  cursor: pointer;
+  width: calc(100% +12px);
+  border-radius: 99999px;
+  position: absolute;
+  bottom: 0;
+}
+.profile-btn:hover {
+  background-color: rgb(26, 26, 26);
+}
+.profile-btn img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: -2.8em;
+}
+.profile-btn svg,
+.details svg,
+.search-bar svg {
+  height: 1.25rem;
+  margin-left: 5px;
+  vertical-align: bottom;
+}
+
+.tag,
+.time,
+.dot,
+.details svg {
+  color: rgb(136, 153, 166);
+  fill: rgb(136, 153, 166);
+  display: block;
+}
+/* .tag{
+  color: #3e92ff;
+  margin-left: 2em;
+} */
+.right-column {
+  margin-left: 15px;
+}
+.profile-image {
+  border-radius: 100%;
+  height: 40px;
+  width: 48px;
+}
+.content {
+  border: 1px solid var(--border-color);
+  border-top: none;
+  border-bottom: none;
+  /* background-color: white; */
+  /* position: center; */
+}
+.container-header div,
+.trends-header div,
+.trends-item > div > div {
+  display: flex;
+  margin-right: -10px;
+  border-radius: 100%;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+}
+.forFollow {
+  padding: 15px 75px;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 15px;
+}
+.forFollowing {
+  padding: 15px 45px;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+/* .content-header .fade {
+  color: #ffffff62 !important;
+  font-weight: 500;
+} */
+.container .forfollow:hover {
+  background: #34425070;
+}
+.content-header svg {
+  margin-left: 25px;
+}
+.trends-header div {
+  margin-right: 0;
+}
+.trends-item > div {
+  position: relative;
+}
+.trends-item > div > div {
+  position: absolute;
+  width: 34.76px;
+  height: 34.75px;
+  top: -7px;
+  right: 0px;
+}
+.content-header div:hover,
+.trends-header div:hover,
+.trends-item > div > div:hover {
+  background-color: rgb(65, 65, 65);
+}
+
+.trends-item > div > div:hover svg {
+  fill: var(--main-color);
+}
+
+/* .content-header span{
+  font-size: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 700;
+} */
+
+.breakhr {
+  margin-left: -16px;
+  margin-right: -16px;
+  border: 0.01em solid rgb(105, 105, 105);
+  margin-top: 1em;
+
+  color: grey;
+}
+.breakhr2{
+  margin-left: -77px;
+  margin-right: -16px;
+  border: 0.01em solid rgb(105, 105, 105);
+  margin-top: 1em;
+  color: grey;
+}
+.content-header svg,
+.trends-header svg {
+  fill: var(--main-color);
+  height: 22px;
+  width: 22px;
+}
+
+.content-header,
+.tweet,
+.post {
+  padding: 15px;
+}
+.tweet {
+  display: flex;
+  border-bottom: 1px;
+}
+.post:hover {
+  cursor: pointer;
+  background-color: rgb(255, 255, 255, 0.07);
+}
+.right-column,
+.right-column form,
+.right-column input {
+  width: 100%;
+}
+
+.right-column input {
+  height: 56px;
+  background: transparent;
+  border: none;
+  color: white;
+}
+
+.right-column input::placeholder,
+.search::placeholder {
+  font-size: 20px;
+  color: #8899a6;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.tweet,
+.right-column .bottom-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+.tweet .right-column .bottom-row .buttons > div {
+  width: 38px;
+  height: 38px;
+  border-radius: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tweet .right-column .bottom-row .buttons {
+  display: flex;
+}
+.tweet .right-column .bottom-row .button > div:hover {
+  background-color: rgb(39, 39, 39);
+}
+.tweet .right-column .bottom-row svg {
+  width: 22px;
+  height: 22px;
+  fill: var(--main-color);
+}
+.tweet .right-column .bottom-row .tweet-btn {
+  width: 90px;
+  opacity: 0.7;
+  margin: 0;
+}
+.post{
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+  justify-content: space-between;
+
+}
+
+.post-header>div{
+  display: flex;
+  align-items: center;
+}
+
+.dot{
+  line-height: 20px;
+  font-size: 15px;
+  margin-top: -6px;
+}
+
+.details{
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 100%;
+  justify-content: center !important;
+}
+
+.details svg{
+  margin: 0;
+  /* fill: #fff; */
+}
+
+.details:hover{
+  background-color: var(--shadow-color);
+}
+.post-header .tag,
+.post-header .time,
+.dot{
+  margin-left: 4px;
+}
+
+.post .bottom-row{
+  max-width: 425px;
+  margin-top: 12px;
+  justify-content: space-between;
+}
+
+
+.post .bottom-row,
+.post .bottom-row>div{
+  display: flex;
+  align-items: center;
+  color: rgb(136, 153, 166);
+  cursor: pointer;
+}
+
+.post .bottom-row>div{
+  margin: -8px;
+}
+
