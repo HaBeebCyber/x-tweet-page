@@ -565,3 +565,10 @@ img {
 .user:hover{
   background-color: rgb(255, 255, 255, 0, 0.07);
 }
+.trends-item>div{
+  display: flex;
+  justify-content: space-between;
+  height: 1.25rem;
+  color: rgb(136,153,166);
+  fill: rgb(136,153,166);
+}
