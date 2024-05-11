@@ -595,7 +595,7 @@ img {
   display: flex;
   justify-content: space-between;
 }
-.followbtn {
+.follow-btn {
   min-height: 32px;
   min-width: 32px;
   font-weight: 500;
@@ -605,4 +605,31 @@ img {
   background: #fff;
   border: 1px solid currentColor;
   border-radius: 9999px;
+}
+
+.follow-btn:hover{
+  background-color: var(--shadow-color);
+}
+
+.line{
+  background-color: rgba(0,0,0,0);
+  height: 1px;
+  border: 1px solid rgb(25,39,52);
+  margin: 16px 0;
+  border-radius: 16px;
+}
+
+.right-side footer nav{
+  padding: 0 16px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.right-side footer span,
+.right-side footer svg{
+  height: 1em;
+  vertical-align: text-bottom;
+  padding: 16px;
+  line-height: 16px;
+  color: rgb(136, 153, 166));
 }
