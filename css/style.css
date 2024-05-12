@@ -232,9 +232,10 @@ img {
   border: 1px solid var(--border-color);
   border-top: none;
   border-bottom: none;
+  /* width: 50vh; */
   /* background-color: white; */
-  /* position: center; */
-  /* position: fixed */
+  position: center;
+  /* position: fixed; */
 }
 .container-header div,
 .trends-header div,
@@ -632,4 +633,17 @@ img {
   padding: 16px;
   line-height: 16px;
   color: rgb(136, 153, 166);
+  fill: currentColor;
+  font-size: 13px;
 }
+
+.right-side footer span:not(:lastchild):hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.search,
+.tweet input{
+  color: #fff;
+}
+
